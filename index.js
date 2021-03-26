@@ -1,15 +1,13 @@
-const Circle = require("./src/circle");
-const CheckWord = require("./src/checkWord");
+const { Circle, CheckWord } = require("./src");
 
-const main = () => {
+const checkCircleArea = () => {
   try {
     /* Calculate area start */
     const radius = 10;
     const circleInstance = new Circle(radius);
     const area = circleInstance.area();
-    console.log(
-      `Area of a circle with radius ${radius} is ${area}.`
-    ); /* Calculate area end */
+    console.log(`Area of a circle with radius ${radius} is ${area}.`);
+    /* Calculate area end */
   } catch (err) {
     console.log(err.message);
   }
@@ -21,14 +19,13 @@ const checkString = () => {
     const word = "Hello";
     const checkWordInstance = new CheckWord(word);
     const result = checkWordInstance.isFirstLetterCapital();
-    console.log(
-      `Is string '${word}' starts with an upper-case? ${result}`
-    ); /* Check string first letter */
+    console.log(`Is string '${word}' starts with an upper-case? ${result}`);
+    /* Check string first letter */
   } catch (err) {
     console.log(err.message);
   }
 };
 
 // Initiate function;
-main();
+checkCircleArea();
 checkString();
