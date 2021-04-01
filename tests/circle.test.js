@@ -1,8 +1,8 @@
 const assert = require("assert");
 const { getCircleArea } = require("../src");
+const { ERROR_MESSAGE_CIRCLE } = require("../constants");
 
 describe("Testcase for circle", () => {
-  const errorMessage = "Invalid radius value for the circle";
   it("Calculate area of circle when redius is positive number", () => {
     const radius = 10;
     const computedArea = Math.PI * Math.pow(radius, 2);
@@ -16,7 +16,7 @@ describe("Testcase for circle", () => {
       getCircleArea(radius);
       assert.fail();
     } catch (err) {
-      assert.equal(errorMessage, err.message);
+      assert.equal(ERROR_MESSAGE_CIRCLE, err.message);
     }
   });
 
@@ -26,7 +26,7 @@ describe("Testcase for circle", () => {
       getCircleArea(radius);
       assert.fail();
     } catch (err) {
-      assert.equal(errorMessage, err.message);
+      assert.equal(ERROR_MESSAGE_CIRCLE, err.message);
     }
   });
 });

@@ -1,5 +1,6 @@
 const assert = require("assert");
 const { isFirstLetterCapital } = require("../src");
+const { ERROR_MESSAGE_STRING } = require("../constants");
 
 describe("Testcase for checkWord", () => {
   const errorMessage = "Invalid string";
@@ -21,7 +22,7 @@ describe("Testcase for checkWord", () => {
       isFirstLetterCapital(word);
       assert.fail();
     } catch (err) {
-      assert.equal(errorMessage, err.message);
+      assert.equal(ERROR_MESSAGE_STRING, err.message);
     }
   });
 });

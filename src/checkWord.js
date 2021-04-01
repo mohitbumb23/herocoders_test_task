@@ -1,10 +1,12 @@
+const { ERROR_MESSAGE_STRING } = require("../constants");
+
 const isFirstLetterCapital = (word) => {
   if (word) {
     // to remove preciding blank spaces
     const checkWord = word.trim();
     return /^[A-Z]/.test(checkWord);
   } else {
-    throw new Error("Invalid string");
+    throw new Error(ERROR_MESSAGE_STRING);
   }
 };
 
