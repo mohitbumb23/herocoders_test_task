@@ -1,4 +1,4 @@
-const Circle = require("./circle");
-const CheckWord = require("./checkWord");
+const { getCircleArea } = require("./circle");
+const { isFirstLetterCapital } = require("./checkWord");
 
-module.exports = { Circle, CheckWord };
+module.exports = { getCircleArea, isFirstLetterCapital };

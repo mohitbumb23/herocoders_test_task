@@ -1,11 +1,10 @@
-const { Circle, CheckWord } = require("./src");
+const { getCircleArea, isFirstLetterCapital } = require("./src");
 
 const checkCircleArea = () => {
   try {
     /* Calculate area start */
     const radius = 10;
-    const circleInstance = new Circle(radius);
-    const area = circleInstance.area();
+    const area = getCircleArea(radius);
     console.log(`Area of a circle with radius ${radius} is ${area}.`);
     /* Calculate area end */
   } catch (err) {
@@ -17,8 +16,7 @@ const checkString = () => {
   try {
     /* Check string first letter */
     const word = "Hello";
-    const checkWordInstance = new CheckWord(word);
-    const result = checkWordInstance.isFirstLetterCapital();
+    const result = isFirstLetterCapital(word);
     console.log(`Is string '${word}' starts with an upper-case? ${result}`);
     /* Check string first letter */
   } catch (err) {

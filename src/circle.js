@@ -1,17 +1,11 @@
 const { checkIsNumber } = require("../utils");
+const { ERROR_MESSAGE_CIRCLE } = require("../constants");
 
-class Circle {
-  constructor(radius) {
-    if (checkIsNumber(radius)) {
-      this.radius = radius;
-    } else {
-      throw new Error("Invalid radius value for the circle");
-    }
+const getCircleArea = (radius) => {
+  if (checkIsNumber(radius) && parseFloat(radius) > 0) {
+    return Math.PI * Math.pow(radius, 2);
   }
-  // Calculate area of circle
-  area() {
-    return Math.PI * Math.pow(this.radius, 2);
-  }
-}
+  throw new Error(ERROR_MESSAGE_CIRCLE);
+};
 
-module.exports = Circle;
+module.exports = { getCircleArea };
