@@ -25,4 +25,14 @@ describe("Testcase for checkWord", () => {
       assert.equal(ERROR_MESSAGE_STRING, err.message);
     }
   });
+
+  it("Throw error while passing object as input", () => {
+    try {
+      const word = { test: "" };
+      isFirstLetterCapital(word);
+      assert.fail();
+    } catch (err) {
+      assert.equal(ERROR_MESSAGE_STRING, err.message);
+    }
+  });
 });
